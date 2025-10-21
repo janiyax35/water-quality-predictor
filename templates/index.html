@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Prediction | Janith Deshan</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/color/48/000000/water-drop.png" type="image/png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-water me-2 text-primary wave-icon"></i>
+                    <span>AquaTest</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto custom-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">
+                                <span class="nav-icon"><i class="fas fa-home"></i></span>
+                                <span class="nav-text">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
+                                <span class="nav-text">About</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#test">
+                                <span class="nav-icon"><i class="fas fa-flask"></i></span>
+                                <span class="nav-text">Test Water</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                <span class="nav-icon"><i class="fas fa-user"></i></span>
+                                <span class="nav-text">Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="display-4 fw-bold text-white">Water Quality <span class="text-primary">Prediction</span></h1>
+                    <p class="lead my-4 text-white-50">
+                        Analyze water parameters and determine potability using machine learning. Get instant results and ensure your water is safe for consumption.
+                    </p>
+                    <a href="#test" class="btn btn-primary btn-lg">Test Your Water <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,128L60,138.7C120,149,240,171,360,176C480,181,600,171,720,149.3C840,128,960,96,1080,90.7C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">About This Project</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-flask text-primary"></i>
+                        </div>
+                        <h4>Water Analysis</h4>
+                        <p>Input water quality parameters to analyze potability using advanced machine learning algorithms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-brain text-primary"></i>
+                        </div>
+                        <h4>ML Powered</h4>
+                        <p>Backed by machine learning models trained on thousands of water samples for accurate predictions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-tachometer-alt text-primary"></i>
+                        </div>
+                        <h4>Instant Results</h4>
+                        <p>Get immediate assessment of water potability with confidence percentage and recommendations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="img-wrapper position-relative">
+                        <img src="https://images.unsplash.com/photo-1617155093730-a8bf47be792d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Water Testing" class="img-fluid rounded shadow">
+                        <div class="floating-badge">
+                            <span>9 Water Parameters</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h3 class="mb-4">The Science Behind Water Potability</h3>
+                    <p>This application analyzes critical water parameters to determine if water is safe for human consumption. The model considers factors like pH level, hardness, TDS, turbidity and more to make an informed prediction.</p>
+                    <div class="parameters-grid">
+                        <div class="parameter">pH</div>
+                        <div class="parameter">Hardness</div>
+                        <div class="parameter">Solids</div>
+                        <div class="parameter">Chloramines</div>
+                        <div class="parameter">Sulfate</div>
+                        <div class="parameter">Conductivity</div>
+                        <div class="parameter">Organic Carbon</div>
+                        <div class="parameter">Trihalomethanes</div>
+                        <div class="parameter">Turbidity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Test Section -->
+    <section id="test" class="water-test py-5">
+        <div class="test-bg"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="test-card" data-aos="zoom-in">
+                        <div class="row">
+                            <div class="col-12 text-center mb-4">
+                                <h2 class="section-title">Water Quality Test</h2>
+                                <p class="text-muted">Enter the water parameters to predict potability</p>
+                            </div>
+                        </div>
+                        
+                        <form id="water-form">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="ph" name="ph" placeholder="pH Level" required>
+                                        <label for="ph"><i class="fas fa-vial me-2"></i> pH Level (0-14)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Hardness" name="Hardness" placeholder="Hardness" required>
+                                        <label for="Hardness"><i class="fas fa-gem me-2"></i> Hardness (mg/L)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Solids" name="Solids" placeholder="TDS" required>
+                                        <label for="Solids"><i class="fas fa-microscope me-2"></i> TDS (ppm)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Chloramines" name="Chloramines" placeholder="Chloramines" required>
+                                        <label for="Chloramines"><i class="fas fa-prescription-bottle me-2"></i> Chloramines (ppm)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Sulfate" name="Sulfate" placeholder="Sulfate" required>
+                                        <label for="Sulfate"><i class="fas fa-atom me-2"></i> Sulfate (mg/L)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Conductivity" name="Conductivity" placeholder="Conductivity" required>
+                                        <label for="Conductivity"><i class="fas fa-bolt me-2"></i> Conductivity (μS/cm)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Organic_carbon" name="Organic_carbon" placeholder="Organic Carbon" required>
+                                        <label for="Organic_carbon"><i class="fas fa-leaf me-2"></i> Organic Carbon (ppm)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Trihalomethanes" name="Trihalomethanes" placeholder="Trihalomethanes" required>
+                                        <label for="Trihalomethanes"><i class="fas fa-biohazard me-2"></i> Trihalomethanes (μg/L)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-floating">
+                                        <input type="number" step="0.01" class="form-control" id="Turbidity" name="Turbidity" placeholder="Turbidity" required>
+                                        <label for="Turbidity"><i class="fas fa-cloud me-2"></i> Turbidity (NTU)</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">
+                                        <i class="fas fa-flask-vial me-2"></i> Analyze Water
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-4" id="result-container" style="display: none;">
+                            <div class="result-box">
+                                <div class="result-header">
+                                    <h4 id="result-title">Prediction Result</h4>
+                                </div>
+                                <div class="result-body">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <div class="gauge-container">
+                                                <div class="gauge">
+                                                    <div class="gauge-fill" id="gauge-fill"></div>
+                                                    <div class="gauge-center">
+                                                        <span id="result-probability">0%</span>
+                                                    </div>
+                                                </div>
+                                                <p class="gauge-label">Confidence</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="result-info">
+                                                <h5 id="result-status">Testing...</h5>
+                                                <p id="result-message" class="lead"></p>
+                                                <div id="result-recommendations" class="mt-3">
+                                                    <h6><i class="fas fa-info-circle me-2"></i> Recommendations</h6>
+                                                    <ul id="recommendations-list">
+                                                        <!-- Recommendations will be added dynamically -->
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Profile Section -->
+    <section id="contact" class="contact py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12" data-aos="fade-up">
+                    <h2 class="section-title">Developer Profile</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8" data-aos="fade-up">
+                    <div class="contact-info">
+                        <div class="profile-img">
+                            <img src="https://media.licdn.com/dms/image/v2/D5603AQFe36YhzqzMsg/profile-displayphoto-shrink_200_200/B56ZdG1wr1HEAg-/0/1749240188269?e=1758153600&v=beta&t=xQvzjL6ufTqsyY9K9ylysvZkAs-O_XQAOBLjQAgJPvQ" alt="Janith Deshan" class="img-fluid rounded-circle">
+                        </div>
+                        <h3 class="mt-4 mb-3">Janith Deshan</h3>
+                        <p class="lead">Water Quality Researcher & ML Engineer</p>
+                        <p class="student-id">IT24102137</p>
+                        <p><i class="fas fa-envelope me-2"></i> janithmihijaya123@gmail.com</p>
+                        
+                        <div class="social-links mt-4">
+                            <a href="https://www.facebook.com/janith.deshan.186" target="_blank" class="social-icon facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/janithdeshan/" target="_blank" class="social-icon linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/janiyax35" target="_blank" class="social-icon github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/janith_deshan11/" target="_blank" class="social-icon instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Water Quality Prediction | Developed by <span class="fw-bold">Janith Deshan</span></p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">IT24102137</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
